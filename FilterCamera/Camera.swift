@@ -49,11 +49,6 @@ class Camera: NSObject {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
     }
     
-}
-
-// MARK: - Overlays
-extension Camera {
-    
     @objc private func orientationChanged() {
         switch UIDevice.current.orientation {
         case .landscapeLeft, .landscapeRight, .faceDown, .faceUp:
@@ -62,6 +57,11 @@ extension Camera {
             dismissCoverController()
         }
     }
+    
+}
+
+// MARK: - Overlays
+extension Camera {
     
     private func presentCoverController() {
         coverViewController = CoverViewController()
