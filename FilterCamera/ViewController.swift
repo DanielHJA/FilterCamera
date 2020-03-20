@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     private lazy var cameraBarButtonItem: UIBarButtonItem = {
-        let temp = UIBarButtonItem(title: "Camera", style: .plain, target: self, action: #selector(openCamera))
+        let temp = UIBarButtonItem(title: "Camera", style: .plain, target: self, action: #selector(presentCamera))
         return temp
     }()
     
@@ -46,12 +46,12 @@ class ViewController: UIViewController {
         navigationItem.leftBarButtonItem = saveBarButtonItem
     }
 
-    @objc private func openCamera() {
+    @objc private func presentCamera() {
         camera.presentCamera()
     }
     
     @objc private func saveToCameraRoll() {
-        camera.saveToRoll()
+        camera.saveToCameraRoll() 
     }
 
 }

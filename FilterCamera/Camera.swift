@@ -78,18 +78,20 @@ extension Camera {
 
 // MARK: - External
 extension Camera {
+    
     func presentCamera() {
         controller?.present(imagePickerViewController, animated: true)
     }
+    
+    func saveToCameraRoll() {
+        guard let image = image else { return }
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
+    }
+    
 }
 
 // MARK: - Saving
 extension Camera {
-    
-    func saveToRoll() {
-        guard let image = image else { return }
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
-    }
     
     @objc func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
