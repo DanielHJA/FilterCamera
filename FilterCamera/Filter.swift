@@ -5,6 +5,8 @@
 //  Created by Daniel Hjärtström on 2020-03-20.
 //  Copyright © 2020 Daniel Hjärtström. All rights reserved.
 //
+// More filters available at reference page:
+// https://developer.apple.com/library/archive/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html
 
 import UIKit
 
@@ -17,6 +19,10 @@ enum Filter: String {
     case process = "CIPhotoEffectProcess"
     case tonal = "CIPhotoEffectTonal"
     case transfer =  "CIPhotoEffectTransfer"
+    case blur = "CIGaussianBlur"
+    case sepia = "CISepiaTone"
+    case bloom = "CIBloom"
+    case scale = "CILanczosScaleTransform"
 }
 
 extension UIImage {

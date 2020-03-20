@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     private lazy var camera: Camera = {
         let temp = Camera(self)
-        temp.filter = .mono
+        temp.filter = .sepia
         temp.delegate = self
         return temp
     }()
