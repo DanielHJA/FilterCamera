@@ -62,12 +62,16 @@ extension ViewController: CameraDelegate {
         imageView.image = image
     }
     
-    func imageSavedSuccessfully() {
+    func imageSavedSuccess() {
         let controller = CompletionViewController()
         controller.modalPresentationStyle = .overFullScreen
         controller.modalTransitionStyle = .crossDissolve
         present(controller, animated: true, completion: nil)
         imageView.image = nil
+    }
+    
+    func imageSaveFailure(_ error: Error) {
+        print(error)
     }
     
 }

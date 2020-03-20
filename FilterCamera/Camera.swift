@@ -10,28 +10,38 @@ import UIKit
 
 protocol CameraDelegate: class {
     func didFinishPickingImage(_ image: UIImage)
-    func imageSavedSuccessfully()
+    func imageSavedSuccess()
+    func imageSaveFailure(_ error: Error)
 }
 
 class Camera: NSObject {
-
-    weak var controller: UIViewController?
+    
+    var filter: Filter?
+    var sourceType: UIImagePickerController.SourceType = .camera
+    var allowsEditing: Bool = false
+    var cameraCaptureMode: UIImagePickerController.CameraCaptureMode = .photo
+    var cameraDevice: UIImagePickerController.CameraDevice = .rear
+    
     weak var delegate: CameraDelegate?
+    private weak var controller: UIViewController?
     
     private var imagePickerViewController = UIImagePickerController()
     private var coverViewController: CoverViewController?
-    var filter: Filter?
     private var image: UIImage?
     
-    init(_ controller: UIViewController, sourceType: UIImagePickerController.SourceType = .camera, allowsEditing: Bool = false, cameraCaptureMode: UIImagePickerController.CameraCaptureMode = .photo, cameraDevice: UIImagePickerController.CameraDevice = .rear) {
+    init(_ controller: UIViewController) {
         super.init()
         self.controller = controller
+        configureImagePickerViewController()
+        configureObservers()
+    }
+    
+    private func configureImagePickerViewController() {
         imagePickerViewController.sourceType = sourceType
         imagePickerViewController.allowsEditing = allowsEditing
         imagePickerViewController.cameraCaptureMode = cameraCaptureMode
         imagePickerViewController.cameraDevice = cameraDevice
         imagePickerViewController.delegate = self
-        configureObservers()
     }
     
     private func configureObservers() {
@@ -39,9 +49,10 @@ class Camera: NSObject {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
     }
     
-    func presentCamera() {
-        controller?.present(imagePickerViewController, animated: true)
-    }
+}
+
+// MARK: - Overlays
+extension Camera {
     
     @objc private func orientationChanged() {
         switch UIDevice.current.orientation {
@@ -63,15 +74,17 @@ class Camera: NSObject {
         coverViewController = nil
     }
     
-    private func processImage() {
-        if let filter = filter {
-            image = image?.applyFilter(filter: filter)
-        }
-        
-        if let image = image {
-            delegate?.didFinishPickingImage(image)
-        }
+}
+
+// MARK: - External
+extension Camera {
+    func presentCamera() {
+        controller?.present(imagePickerViewController, animated: true)
     }
+}
+
+// MARK: - Saving
+extension Camera {
     
     func saveToRoll() {
         guard let image = image else { return }
@@ -79,16 +92,18 @@ class Camera: NSObject {
     }
     
     @objc func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-       guard error == nil else {
-          print("There was an error saving the image")
-          return
-       }
-        delegate?.imageSavedSuccessfully()
+        if let error = error {
+            print("There was an error saving the image: \(error)")
+            delegate?.imageSaveFailure(error)
+            return
+        }
+        delegate?.imageSavedSuccess()
         self.image = nil
     }
     
 }
 
+// MARK: - Delegates and Processing Method
 extension Camera: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -106,6 +121,16 @@ extension Camera: UIImagePickerControllerDelegate, UINavigationControllerDelegat
         
         self.image = image
         processImage()
+    }
+    
+    private func processImage() {
+        if let filter = filter {
+            image = image?.applyFilter(filter: filter)
+        }
+        
+        if let image = image {
+            delegate?.didFinishPickingImage(image)
+        }
     }
     
 }
