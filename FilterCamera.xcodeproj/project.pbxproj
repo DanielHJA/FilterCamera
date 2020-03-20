@@ -10,12 +10,15 @@
 		7B8BDE452424AEC500000A7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE442424AEC500000A7B /* AppDelegate.swift */; };
 		7B8BDE472424AEC500000A7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE462424AEC500000A7B /* SceneDelegate.swift */; };
 		7B8BDE492424AEC500000A7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE482424AEC500000A7B /* ViewController.swift */; };
-		7B8BDE4C2424AEC500000A7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8BDE4A2424AEC500000A7B /* Main.storyboard */; };
 		7B8BDE4F2424AEC500000A7B /* FilterCamera.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE4D2424AEC500000A7B /* FilterCamera.xcdatamodeld */; };
 		7B8BDE512424AEC600000A7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8BDE502424AEC600000A7B /* Assets.xcassets */; };
 		7B8BDE542424AEC600000A7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8BDE522424AEC600000A7B /* LaunchScreen.storyboard */; };
 		7B8BDE5F2424AEC600000A7B /* FilterCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE5E2424AEC600000A7B /* FilterCameraTests.swift */; };
 		7B8BDE6A2424AEC600000A7B /* FilterCameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE692424AEC600000A7B /* FilterCameraUITests.swift */; };
+		7B8BDE782424AF1100000A7B /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE772424AF1100000A7B /* Camera.swift */; };
+		7B8BDE7A2424B5DC00000A7B /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE792424B5DC00000A7B /* CoverViewController.swift */; };
+		7B8BDE7C2424C37900000A7B /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE7B2424C37900000A7B /* Filter.swift */; };
+		7B8BDE7E2424C96F00000A7B /* CompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BDE7D2424C96F00000A7B /* CompletionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,6 @@
 		7B8BDE442424AEC500000A7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B8BDE462424AEC500000A7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7B8BDE482424AEC500000A7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7B8BDE4B2424AEC500000A7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B8BDE4E2424AEC500000A7B /* FilterCamera.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FilterCamera.xcdatamodel; sourceTree = "<group>"; };
 		7B8BDE502424AEC600000A7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B8BDE532424AEC600000A7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 		7B8BDE652424AEC600000A7B /* FilterCameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilterCameraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8BDE692424AEC600000A7B /* FilterCameraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCameraUITests.swift; sourceTree = "<group>"; };
 		7B8BDE6B2424AEC600000A7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B8BDE772424AF1100000A7B /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		7B8BDE792424B5DC00000A7B /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
+		7B8BDE7B2424C37900000A7B /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		7B8BDE7D2424C96F00000A7B /* CompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +110,10 @@
 				7B8BDE442424AEC500000A7B /* AppDelegate.swift */,
 				7B8BDE462424AEC500000A7B /* SceneDelegate.swift */,
 				7B8BDE482424AEC500000A7B /* ViewController.swift */,
-				7B8BDE4A2424AEC500000A7B /* Main.storyboard */,
+				7B8BDE772424AF1100000A7B /* Camera.swift */,
+				7B8BDE7B2424C37900000A7B /* Filter.swift */,
+				7B8BDE792424B5DC00000A7B /* CoverViewController.swift */,
+				7B8BDE7D2424C96F00000A7B /* CompletionViewController.swift */,
 				7B8BDE502424AEC600000A7B /* Assets.xcassets */,
 				7B8BDE522424AEC600000A7B /* LaunchScreen.storyboard */,
 				7B8BDE552424AEC600000A7B /* Info.plist */,
@@ -237,7 +246,6 @@
 			files = (
 				7B8BDE542424AEC600000A7B /* LaunchScreen.storyboard in Resources */,
 				7B8BDE512424AEC600000A7B /* Assets.xcassets in Resources */,
-				7B8BDE4C2424AEC500000A7B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8BDE7C2424C37900000A7B /* Filter.swift in Sources */,
 				7B8BDE4F2424AEC500000A7B /* FilterCamera.xcdatamodeld in Sources */,
+				7B8BDE7E2424C96F00000A7B /* CompletionViewController.swift in Sources */,
+				7B8BDE782424AF1100000A7B /* Camera.swift in Sources */,
 				7B8BDE492424AEC500000A7B /* ViewController.swift in Sources */,
 				7B8BDE452424AEC500000A7B /* AppDelegate.swift in Sources */,
+				7B8BDE7A2424B5DC00000A7B /* CoverViewController.swift in Sources */,
 				7B8BDE472424AEC500000A7B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,14 +313,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7B8BDE4A2424AEC500000A7B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7B8BDE4B2424AEC500000A7B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7B8BDE522424AEC600000A7B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
